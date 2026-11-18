@@ -47,7 +47,8 @@ public class Results {
 
     @Override
     public String toString() {
-        return "Results [functionName=" + functionName + ", duration=" + duration + ", sample=" + sample + "]";
+        double segundos = duration / 1_000_000_000.0;
+        return "Results [functionName=" + functionName + ", duration=" + duration + segundos + "s"+ "sample=" + sample + ", segundos=" + segundos + "]";
     }
 
 
