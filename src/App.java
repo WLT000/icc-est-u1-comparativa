@@ -26,8 +26,18 @@ public class App {
         */
 
         Generador g = new Generador();
-        List<Integer> list = g.generate(100);
+        Benchmark b = new Benchmark();
+
+
+        List<Integer> list = Generador.generate(1000);
         System.out.println(list);
+        
+        Runnable x = () -> Generador.generate(1000);
+
+        //Toda la funcion en x puede ser
+        Results benGenlist = Benchmark.medir(() -> Generador.generate(100000),"Generar listado", "100");
+
+            System.out.println(benGenlist);
         
 
 
